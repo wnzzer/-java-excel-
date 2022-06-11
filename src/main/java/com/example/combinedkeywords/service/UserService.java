@@ -14,7 +14,7 @@ public interface UserService {
     public JsonResult register(String name,String password);
     /**
      * 登陆
-     * 将用户信息注册
+     * 将用户信息登陆
      * @param name
      * @param password
      * @return JsonResult
