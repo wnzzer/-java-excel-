@@ -15,11 +15,11 @@ import javax.annotation.Resource;
 public class UserController {
     @Resource
     private UserService userService;
-    @PutMapping("register")
+    @PutMapping("/register")
     public JsonResult register(String name,String password){
         return userService.register(name,password);
     }
-    @PostMapping("login")
+    @PostMapping("/login")
     public JsonResult login(String name,String password){
         return userService.login(name, password);
     }
