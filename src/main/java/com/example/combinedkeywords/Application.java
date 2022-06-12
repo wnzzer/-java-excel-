@@ -10,12 +10,11 @@ import springfox.documentation.oas.annotations.EnableOpenApi;
  * @author 15031
  */
 @SpringBootApplication
-@EnableOpenApi
-@EnableWebMvc
 public class Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
+
 
 }
