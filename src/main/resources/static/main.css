@@ -1,0 +1,271 @@
+body {
+	font: 13px/1.5 "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif; font-size-adjust: none; font-stretch: normal;
+}
+#mainPage {
+	color: rgb(255, 255, 255); font-size: 22px; background-color: rgb(0, 82, 130);
+}
+p {
+	text-shadow: 0px 1px 2px rgba(30,30,30,1);
+}
+#optionsOpen {
+	text-shadow: 0px 1px 2px rgba(30,30,30,1);
+}
+#optionsBox {
+	text-shadow: 0px 1px 2px rgba(30,30,30,1);
+}
+.center {
+	text-align: center;
+}
+.cursorPointer:hover {
+	cursor: pointer;
+}
+#headerArea {
+	height: 366px; padding-top: 35px; background-image: url("gfx/header-background-glow.jpg"); background-repeat: no-repeat;
+}
+#logoImage {
+	
+}
+#logoText {
+	height: 85px; margin-top: 14px; background-image: url("gfx/merge-words-text-logo.png"); background-repeat: no-repeat;
+}
+#logoText h1 {
+	display: none;
+}
+#logoDescription {
+	color: rgb(234, 234, 234); letter-spacing: 1px; padding-top: 90px; font-size: 30px; text-shadow: 0px 1px 2px rgba(30,30,30,1);
+}
+#logoDescription span {
+	color: rgb(234, 234, 234); letter-spacing: 1px; padding-top: 6px; font-size: 22px; display: block; text-shadow: 0px 1px 2px rgba(30,30,30,1);
+}
+#logoDescription span a {
+	color: rgb(255, 255, 255); font-style: normal;
+}
+#logoDescription a {
+	color: rgb(255, 255, 255); text-decoration: underline;
+}
+#logoDescription a:link {
+	color: rgb(255, 255, 255); text-decoration: underline;
+}
+#logoDescription a:visited {
+	color: rgb(255, 255, 255); text-decoration: underline;
+}
+#logoDescription a:hover {
+	color: rgb(255, 128, 0); text-decoration: underline;
+}
+#logoDescription a:active {
+	color: rgb(255, 255, 255); text-decoration: underline;
+}
+#logoDescription em {
+	font-size: 18px; font-style: normal;
+}
+#threeColumns {
+	
+}
+.column {
+	background: rgb(190, 190, 190); border-radius: 10px; height: 243px; color: rgb(51, 51, 51); font-size: 16px; border-top-color: rgb(255, 255, 255); border-top-width: 1px; border-top-style: solid; box-shadow: 0px 2px 5px rgba(30,30,30,1); text-shadow: 0px 1px 0px rgba(0,0,0,0.4); -webkit-border-radius: 10px; -moz-border-radius: 10px; -webkit-box-shadow: rgba(30, 30, 30, 1) 0 2px 5px; -moz-box-shadow: rgba(30, 30, 30, 1) 0 2px 5px;
+}
+.column:hover {
+	background: rgb(190, 190, 190);
+}
+textarea {
+	margin: 10px; border: 0px solid black; border-image: none; width: 280px; height: 218px; color: rgb(51, 51, 51); font-family: Verdana, Geneva, sans-serif; font-size: 16px; text-shadow: 0px 1px 1px #fff; background-color: transparent; resize: none;
+}
+#extraOptions {
+	height: 38px; font-size: 18px; margin-top: 5px;
+}
+#extraOptions #optionsBox {
+	height: 50px; display: none;
+}
+#extraOptions #optionsBox a {
+	height: 18px; vertical-align: middle; display: inline-block;
+}
+#extraOptions #optionsBox #inpSeperator {
+	width: 30px;
+}
+#extraOptions #optionsBox #sepCustom {
+	
+}
+#extraOptions #optionsBox #sepCustom input {
+	margin: 0px; padding: 0px; width: 30px; height: 15px;
+}
+#extraOptions #optionsOpen {
+	
+}
+#extraOptions #optionsOpen:hover {
+	text-decoration: underline; cursor: pointer;
+}
+#extraOptions #optionsOpen span {
+	width: 20px; height: 20px; margin-top: 5px; margin-right: 5px; float: left;
+}
+#extraOptions .open#optionsOpen span {
+	background-position: 0px 120px; background-image: url("gfx/buttons-sprite.png");
+}
+#extraOptions .open#optionsOpen:hover span {
+	background-position: -30px 120px; background-image: url("gfx/buttons-sprite.png");
+}
+#extraOptions .close#optionsOpen span {
+	background-position: -60px 120px; background-image: url("gfx/buttons-sprite.png");
+}
+#extraOptions .close#optionsOpen:hover span {
+	background-position: -90px 120px; background-image: url("gfx/buttons-sprite.png");
+}
+#extraOptions #optionsClose {
+	margin-top: 10px; float: right;
+}
+#extraOptions #optionsClose:hover {
+	cursor: pointer;
+}
+#extraOptions #optionsClose span {
+	background-position: 0px 60px; width: 20px; height: 20px; margin-top: 5px; margin-left: 5px; float: right; display: block; background-image: url("gfx/social-media-buttons.png");
+}
+#extraOptions #optionsClose:hover span {
+	background-position: 60px 60px; width: 20px; height: 20px; margin-top: 5px; margin-left: 5px; float: right; display: block; background-image: url("gfx/social-media-buttons.png");
+}
+#extraOptions .label {
+	margin-right: 10px;
+}
+#extraOptions li {
+	list-style: none; margin: 0px; padding: 0px; float: left; display: inline-block;
+}
+#extraOptions ul {
+	margin: 10px 0px 0px; padding: 0px; display: inline-block;
+}
+#extraOptions .pressRadio {
+	background: rgb(190, 190, 190); padding: 5px 20px; color: rgb(0, 0, 0); font-size: 14px; border-top-color: rgb(255, 255, 255); border-right-color: rgba(0, 0, 0, 0.1); border-bottom-color: rgba(0, 0, 0, 0.3); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; box-shadow: 0px 1px 1px rgba(30,30,30,1); text-shadow: 0px 1px 1px #fff; -webkit-box-shadow: rgba(30, 30, 30, 1) 0 1px 1px; -moz-box-shadow: rgba(30, 30, 30, 1) 0 1px 1px;
+}
+#extraOptions .pressRadio:hover {
+	background: rgb(190, 190, 190); cursor: pointer;
+}
+#extraOptions .pressed {
+	background: rgb(60, 60, 60); color: rgb(255, 255, 255); font-size: 14px; border-top-color: rgb(17, 17, 17); border-bottom-color: rgba(60, 60, 60, 1); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid; box-shadow: 0px 1px 1px rgba(30,30,30,1); text-shadow: 0px 1px 1px #000; -webkit-box-shadow: rgba(30, 30, 30, 1) 0 1px 1px; -moz-box-shadow: rgba(30, 30, 30, 1) 0 1px 1px;
+}
+#extraOptions .pressed:hover {
+	background: rgb(65, 65, 65); cursor: pointer;
+}
+#extraOptions .first {
+	border-top-left-radius: 3px; border-bottom-left-radius: 3px; -webkit-border-top-left-radius: 3px; -webkit-border-bottom-left-radius: 3px; -moz-border-radius-topleft: 3px; -moz-border-radius-bottomleft: 3px;
+}
+#extraOptions .last {
+	border-right-color: currentColor; border-right-width: 0px; border-right-style: none; border-top-right-radius: 3px; border-bottom-right-radius: 3px; -webkit-border-top-right-radius: 3px; -webkit-border-bottom-right-radius: 3px; -moz-border-radius-topright: 3px; -moz-border-radius-bottomright: 3px;
+}
+#infoCombinations {
+	text-align: center; color: rgb(234, 234, 234); font-size: 30px; text-shadow: 0px 1px 2px rgba(30,30,30,1);
+}
+#infoCombinations .grid_12 {
+	height: 60px;
+}
+#infoCombinations .statusArea {
+	width: 940px; position: absolute;
+}
+#buttonArea {
+	text-align: center; margin-top: 22px;
+}
+.button {
+	background: rgb(255, 128, 0); padding: 0px 30px 2px; border-radius: 22px; color: white; font-size: 30px; font-weight: bold; text-decoration: none; vertical-align: middle; border-top-color: rgb(255, 255, 255); border-top-width: 1px; border-top-style: solid; display: inline-block; position: relative; cursor: pointer; box-shadow: 0px 1px 5px rgba(0,0,0,1); text-shadow: 0px 1px 5px rgba(0,0,0,0.9); -webkit-border-radius: 22px; -moz-border-radius: 22px; -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 5px; -moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 5px;
+}
+.button:hover {
+	background: rgb(217, 109, 0);
+}
+.button:active {
+	top: 1px; box-shadow: 0px 1px 0px rgba(0,0,0,1); -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0px; -moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 0px;
+}
+#results {
+	padding-top: 40px;
+}
+#results .column {
+	height: 180px;
+}
+#results .column textarea {
+	width: 600px; height: 160px;
+}
+#copy2clip {
+	padding: 3px; border: 2px dashed rgb(247, 245, 245); border-image: none; color: rgb(247, 245, 245); font-size: 18px;
+}
+#copy2clip a:hover {
+	text-decoration: underline; cursor: pointer;
+}
+#copy2clip a span {
+	background-position: -120px 120px; width: 26px; height: 26px; margin-top: 3px; float: left; display: block; background-image: url("gfx/buttons-sprite.png");
+}
+#footerArea {
+	padding-top: 20px; padding-bottom: 20px; background-color: rgb(30, 71, 104);
+}
+#footerDevider {
+	background: rgb(30, 71, 104); height: 5px; margin-top: 50px; border-top-color: rgb(13, 30, 44); border-top-width: 1px; border-top-style: solid;
+}
+#footerArea .socialButton {
+	background: url("gfx/buttons-sprite.png"); margin: 5px; width: 60px; height: 60px; display: inline-block; position: relative;
+}
+#footerArea .socialButton:active {
+	top: 1px;
+}
+#footerArea #deliciousBut {
+	background-position: 0px 0px;
+}
+#footerArea #twitterBut {
+	background-position: 60px 0px;
+}
+#footerArea #facebookBut {
+	background-position: 120px 0px;
+}
+#footerArea #deliciousBut:hover {
+	background-position: 0px -60px;
+}
+#footerArea #twitterBut:hover {
+	background-position: 60px -60px;
+}
+#footerArea #facebookBut:hover {
+	background-position: 120px -60px;
+}
+#footerArea #thanx {
+	color: rgb(255, 255, 255); font-size: 18px;
+}
+#footerArea #copyright {
+	color: rgb(157, 157, 157); font-size: 14px; margin-top: 35px; text-shadow: 0px 1px 0px rgba(30,30,30,1);
+}
+#footerArea #contact {
+	color: rgb(255, 255, 255); font-size: 14px; text-shadow: 0px 1px 0px rgba(30,30,30,1);
+}
+#footerArea #contact a {
+	color: rgb(255, 255, 255); font-style: normal;
+}
+#footerArea #contact a:link {
+	color: rgb(255, 255, 255); text-decoration: underline;
+}
+#footerArea #contact a:visited {
+	color: rgb(255, 255, 255); text-decoration: underline;
+}
+#footerArea #contact a:hover {
+	color: rgb(255, 128, 0); text-decoration: underline;
+}
+#footerArea #contact a:active {
+	color: rgb(255, 255, 255); text-decoration: underline;
+}
+.sopa {
+	height: 18px; text-align: center; color: rgb(102, 102, 102); padding-top: 4px; padding-bottom: 4px; font-size: 13px; margin-top: 4px; background-image: url("gfx/sopa.gif"); background-repeat: repeat-x; background-color: rgb(255, 255, 204);
+}
+.sopa strong {
+	color: rgb(0, 0, 0); font-weight: bold;
+}
+.sopa a:link {
+	color: rgb(0, 0, 0); text-decoration: none;
+}
+.sopa a:visited {
+	color: rgb(0, 0, 0); text-decoration: none;
+}
+.sopa a:hover {
+	color: rgb(185, 96, 24); text-decoration: none;
+}
+.sopa a:hover strong {
+	color: rgb(185, 96, 24); text-decoration: none;
+}
+.sopa a:active {
+	color: rgb(0, 0, 0); text-decoration: none;
+}
+#add{
+    width:100px;
+    height:100px;
+    background-color:grey;
+    text-align: center;
+    line-height: 100px;
+}

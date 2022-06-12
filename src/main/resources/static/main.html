@@ -1,0 +1,104 @@
+<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML 
+xmlns="http://www.w3.org/1999/xhtml"><HEAD>
+  -->
+  <!DOCTYPE HTML>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8"> <TITLE>关键词组合工具</TITLE> 
+
+<LINK href="reset.css" rel="stylesheet"> 
+    <LINK href="960.css" rel="stylesheet">
+ <LINK href="main.css" rel="stylesheet"> 
+    <LINK href="favicon2.ico" rel="shortcut icon" type="image/x-icon"> 
+<!-- <SCRIPT src="jquery-1.4.2.min.js" type="text/javascript"></SCRIPT> -->
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<SCRIPT src="main.js" type="text/javascript"></SCRIPT>
+ 
+ <!-- <SCRIPT type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-154025-16']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</SCRIPT>  -->
+ 
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD> 
+<BODY id="mainPage"><A id="top"></A>	     
+<DIV class="container_12 " id="headerArea" style="padding-bottom:100px;">
+<DIV class="grid_4" id="logoImage"><IMG width="296" height="317" alt="Logo of MergeWords" >    </DIV>          
+<DIV class="grid_8" id="logoText">
+<H1>Mergewords</H1>
+<!-- <P id="logoDescription">  关键词组合工具<BR>				用于     注册域名 <BR>				谷歌关键词推广，B2B网站    等              
+<SPAN>在前2个框或3个框中分别键入关键词，1个1行, 然后按 <A class="cursorPointer" id="mergeLink">开始!</A></SPAN><EM></EM>             
+</P> -->
+</DIV>         
+<DIV class="clear"></DIV>
+<DIV id="threeColumns">
+<DIV 
+class="column grid_4" id="column_box"><TEXTAREA class="editText" id="colText1" rows="10" cols="40">在这输入关键词</TEXTAREA> 
+            </DIV>	         
+<DIV 
+class="column grid_4" ><TEXTAREA class="editText" id="colText2" rows="10" cols="40">在这输入关键词</TEXTAREA>
+            </DIV>	         
+<DIV 
+class="column grid_4" ><TEXTAREA class="editText" id="colText3" rows="10" cols="40">在这输入关键词</TEXTAREA>
+            </DIV> 
+            
+<!-- <DIV id="add" class="grid_4"> + </div>                -->
+<DIV class="clear"></DIV>
+</DIV>
+<DIV id="add" class="grid_4"> + </div> 
+<DIV class="clear"></DIV>
+<DIV id="extraOptions">
+<DIV class="grid_12"><A class="open" id="optionsOpen"><SPAN></SPAN>额外选项</A>             </DIV>	         
+<DIV class="clear"></DIV>
+<DIV class="grid_12">
+<DIV id="optionsBox">
+<DIV class="grid_7 alpha" style="border: 0px solid red; border-image: none;">
+<UL>
+  <LI class="label">分隔符:</LI>
+  <LI><A class="pressRadio first seperators" id="sepNothing">无</A></LI>
+  <LI><A class="pressRadio pressed seperators" id="sepSpace">空格</A></LI>
+  <LI><A class="pressRadio seperators" id="sepDash">-</A></LI>
+  <LI><A class="pressRadio seperators" id="sepPlus">+</A></LI>
+  <LI><A class="pressRadio last seperators" id="sepCustom">自定义: <INPUT id="txtCustom" type="text"></A></LI></UL></DIV> 
+                    
+<DIV class="grid_5 omega">
+<UL>
+  <LI class="label">加符号:</LI>
+  <LI><A class="pressRadio first enclosers pressed" 
+  id="encNothing">无</A></LI>
+  <LI><A class="pressRadio enclosers" id="encQuotes">"&nbsp;"</A></LI>
+  <LI><A class="pressRadio enclosers" 
+id="encBrackets">[&nbsp;]</A></LI></UL></DIV>                 </DIV></DIV>       
+      
+<DIV class="clear"></DIV></DIV>
+<DIV class="clear"></DIV><A id="resultAnch"></A>         
+<DIV id="infoCombinations">
+<DIV class="grid_12">
+<DIV class="statusArea" id="combinationsText1">0 个组合</DIV>
+<DIV class="statusArea" id="combinationsText2">0 个组合</DIV></DIV>		 </DIV>
+<DIV class="clear"></DIV>
+<DIV id="buttonArea">
+<DIV class="grid_12"><A class="button" id="mergeButton">开始!</A>             
+</DIV>		 </DIV>
+<DIV class="clear"></DIV>
+<DIV id="results">
+<DIV class="grid_2">&nbsp;            </DIV>	         
+<DIV class="column grid_8" id="resultsTextArea"><TEXTAREA id="resultText" rows="10" cols="80"></TEXTAREA> 
+                
+               
+            </DIV>	         
+<DIV class="grid_2">&nbsp;           </DIV>		 </DIV></DIV>
+<DIV class="clear"></DIV>
+<DIV id="footerDevider"></DIV>
+<!-- <DIV id="footerArea">
+<DIV class="container_12">
+<div align="center">此内容来源于Copyright © mergewords.com ，由<a href="https://www.ollomall.com">ollomall.com</a>汉化。所有权属于原作者。</div>
+<DIV class="clear"></DIV></DIV>
+<DIV class="clear"></DIV></DIV> -->
+<!-- <SCRIPT src="MergeWords_files/4734.js" type="text/javascript"></SCRIPT> -->
+ </BODY></HTML>

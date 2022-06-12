@@ -1,0 +1,20 @@
+* { margin: 0; padding: 0; }
+
+
+
+
+.load { width: 100%;background-color:palevioletred; background: url(../img/loadbackground.jpg) no-repeat;background-size: 100% 100%; height: 815px;margin:0;display: flex; }
+.load .loadcenter { margin: auto; width: 400px; height: 500px; background-color: azure; border-radius: 4%;margin-top:100px; }
+.login_interface{margin-top:100px ;margin-left:100px; }
+.login_interface input{ margin-top: 40px; height:30px;}
+.login_interface button{margin-top:40px; width:120px; height:30px; background-color:blue;color:white;border:none;margin-left:42px; }
+#go_registration{padding:20px; margin-left:20px;font-size: 15px;color:blue;cursor: pointer;}
+
+.Registration_interface{margin-top:100px ;margin-left:100px;display:none;}
+.Registration_interface input{ margin-top: 20px; height:30px;}
+#loadbefore{ width:120px;padding:5px;margin-left:50px; margin-top: 20px; height:30px;background-color:blue;border:none;color:white;}
+#havecod{ padding:5px;width:100px;height:34px;font-size: 11px;color:white;background-color:blue;border:none;}
+#go_login{padding:20px; margin-left:20px;font-size: 15px;color:blue;cursor: pointer;}
+input{outline:none;} 
+.active{border: 2px solid rgb(63, 63, 202);}
+/*# sourceMappingURL=ajax.css.map */
