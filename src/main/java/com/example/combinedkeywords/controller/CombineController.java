@@ -1,16 +1,17 @@
 package com.example.combinedkeywords.controller;
 
+import com.example.combinedkeywords.pojo.Data;
 import com.example.combinedkeywords.util.CombinationOperation;
+import com.example.combinedkeywords.util.ExcelUtil;
 import com.example.combinedkeywords.util.JsonResult;
+import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  * @author 15031
@@ -36,10 +37,15 @@ public class CombineController {
             sTemp = StringUtils.join(tempListA, symbol);
             resultArraylist.add(sTemp);
         }
-
-        System.out.println(resultArraylist);
-        return JsonResult.ok(resultArraylist);
-}
+        Date date = new Date();
+        System.out.println(date);
+        SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyyyHHmmss");
+        String sDate = formatter.format(date);
+        System.out.println(a);
+        String fileName = sDate + "" + (int) (Math.random() * 100);
+        ExcelUtil.creatExcel(resultArraylist, fileName);
+        return JsonResult.ok(new Data(resultArraylist, fileName));
+    }
 
     }
 

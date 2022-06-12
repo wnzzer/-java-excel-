@@ -35,6 +35,7 @@ target/
 .classpath
 .project
 .settings/
+.xls
 bin/
 
 *.log
