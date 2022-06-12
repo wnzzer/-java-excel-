@@ -1,8 +1,9 @@
+#?application.properties/??application.yml??????????????.
 #?????????
 spring:
-datasource:
-url: jdbc:mysql://101.132.108.178/keywords?useUnicode=true&characterEncoding=utf8&useSSL=false
-username: root
-password: ChenBaifu137708.
-driver-class-name: com.mysql.jdbc.Driver
-type: com.alibaba.druid.pool.DruidDataSource
+  datasource:
+    url: jdbc:mysql://101.132.108.178/keywords?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: ChenBaifu137708.
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource

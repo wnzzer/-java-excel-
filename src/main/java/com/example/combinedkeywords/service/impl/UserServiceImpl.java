@@ -3,12 +3,14 @@ package com.example.combinedkeywords.service.impl;
 import com.example.combinedkeywords.dao.UserDao;
 import com.example.combinedkeywords.service.UserService;
 import com.example.combinedkeywords.util.JsonResult;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
 /**
  * @author 15031
  */
+@Service
 public class UserServiceImpl implements UserService {
     @Resource
     private UserDao userDao;
@@ -16,6 +18,10 @@ public class UserServiceImpl implements UserService {
     public JsonResult register(String name, String password) {
         if (name == null || password == null){
             return JsonResult.errorMsg("账号或密码未输入");
+        }
+        if (userDao.exist(name)==1)
+        {
+            return JsonResult.errorMsg("账号已经存在");
         }
         Integer state=userDao.register(name, password);
         if (state==1){
