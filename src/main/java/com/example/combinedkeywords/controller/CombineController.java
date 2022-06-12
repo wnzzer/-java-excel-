@@ -52,13 +52,13 @@ public class CombineController {
 
     @RequestMapping("/downloadFile")
 
-    private String downloadFile(HttpServletResponse response){
-        String downloadFilePath = "/root/fileSavePath/";//被下载的文件在服务器中的路径,
-        String fileName = "demo.xml";//被下载文件的名称
+    private String downloadFile(HttpServletResponse response,String fileName){
+        String downloadFilePath = "/root/fileSavePath/";
 
-        File file = new File(downloadFilePath);
+        fileName=fileName+".xls";
+        File file = new File(fileName);
         if (file.exists()) {
-            response.setContentType("application/force-download");// 设置强制下载不打开
+            response.setContentType("application/force-download");
             response.addHeader("Content-Disposition", "attachment;fileName=" + fileName);
             byte[] buffer = new byte[1024];
             FileInputStream fis = null;
