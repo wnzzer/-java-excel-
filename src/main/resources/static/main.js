@@ -397,10 +397,11 @@ function merge()
 	var arry2=arry1.split('ncvj%');
 	console.log(arry2);
 	$.ajax({
-		url:"http://localhost:8080/combine",
+		url:"/combine",
 		type:"GET",
 		data:{
 			arrayLists1:arry2,
+			symbol:"..",
 		},
 		success:function (res) {
 			if(code==200){
