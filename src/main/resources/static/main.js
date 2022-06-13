@@ -373,7 +373,7 @@ function merge() {
 				console.log(res.data.dataInner.join('\n') );
 				$("#resultText").val(res.data.dataInner.join('\n'));
 				var dataInner2=res.data.dataInner2
-				var fileurl="http://localhost:8080/downloadFile?fileName="+dataInner2
+				var fileurl="/downloadFile?fileName="+dataInner2
 				console.log(fileurl);
 				document.getElementById("downloadFile").href=fileurl;
 
