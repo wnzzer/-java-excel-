@@ -426,11 +426,16 @@ function merge()
 		dataType:'json',
 		contentType:'application/json;charset=utf-8',
 		type:"POST",
-		data:JSON.stringify({
-			"arraylist": [
-				"string,213,123",
-				"213,123,1,321"
-			],
+		data:
+		// 	{
+		// 	arraylist:JsonArray,
+		// 	symbol:JSON.stringify( "string"),
+		// 	symbol: JSON.stringify( "string"),
+		//
+		// },
+
+			JSON.stringify({
+			"arraylist":arry2,
 			"symbol": "string",
 			"symbol2": "string"
 		}),
