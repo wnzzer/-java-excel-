@@ -427,12 +427,9 @@ function merge()
 		contentType:'application/json;charset=utf-8',
 		type:"POST",
 		data:JSON.stringify({
-			"arraylist": [
-				"string,213,123",
-				"213,123,1,321"
-			],
-			"symbol": "string",
-			"symbol2": "string"
+			"arraylist": arry2,
+			"symbol": ",",
+			"symbol2": ""
 		}),
 		success:function (res) {
 			if(res.status==200){
