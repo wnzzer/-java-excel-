@@ -1,49 +1,47 @@
 var tip=document.getElementById("tip");
 var havecod=document.getElementById("havecod");
-    function havecode(){
-            var mail =$("#mail").val(); 
-            if(mail !=""){
-                $.ajax({
-                    url:"http://118.195.129.130:3000/user/getMailCode",
-                    type:"POST",
-                    data:{
-                        mail:mail,
-                    },
-                    success:function (res) {
-                        if(res.err=="0"){
-                        console.log("发送成功");
-                        var t = 20;
-                        havecod.disabled = true;
-                       var time = setInterval(function(){
-                        if(t==0){//如果倒计时等于0了，清除计时器，恢复按钮，将t重置为10，否则按钮中文字改变，t递减。
-                        clearInterval(time);
-                         havecod.disabled=false;
-                         havecod.innerHTML='获取验证码';
-                         t=10;
-                    }else{
-                        havecod.innerHTML='您可以在'+t+'秒后再次获取';
-                        t--;
-                     }
-                     }, 1000);
-                }
-                else{
-                    tip.innerHTML=res.msg;
-                }
-                    },
-                  
-                }) 
-
-          
-            }
-
-       
-    }
+    // function havecode(){
+    //         var mail =$("#mail").val();
+    //         if(mail !=""){
+    //             $.ajax({
+    //                 url:"http://118.195.129.130:3000/user/getMailCode",
+    //                 type:"POST",
+    //                 data:{
+    //                     mail:mail,
+    //                 },
+    //                 success:function (res) {
+    //                     if(res.err=="0"){
+    //                     console.log("发送成功");
+    //                     var t = 20;
+    //                     havecod.disabled = true;
+    //                    var time = setInterval(function(){
+    //                     if(t==0){//如果倒计时等于0了，清除计时器，恢复按钮，将t重置为10，否则按钮中文字改变，t递减。
+    //                     clearInterval(time);
+    //                      havecod.disabled=false;
+    //                      havecod.innerHTML='获取验证码';
+    //                      t=10;
+    //                 }else{
+    //                     havecod.innerHTML='您可以在'+t+'秒后再次获取';
+    //                     t--;
+    //                  }
+    //                  }, 1000);
+    //             }
+    //             else{
+    //                 tip.innerHTML=res.msg;
+    //             }
+    //                 },
+    //
+    //             })
+    //
+    //
+    //         }
+    //
+    //
+    // }
     
       function logon() {
             var us =$("#us").val().trim(); 
-            var ps =$("#ps").val().trim(); 
-            var mail =$("#mail").val().trim(); 
-            var code =$("#code").val().trim();
+            var ps =$("#ps").val().trim();
             if(us==""){
                 tip.style.display="block";
                 tip.innerText="用户名不能为空";
@@ -58,31 +56,18 @@ var havecod=document.getElementById("havecod");
                 return;
                  
         }
-        if(mail==""){
-            tip.style.display="block";
-            tip.innerText="邮箱地址不能为空";
-            tip.style.color="red";
-             return;
-        }
-        if(code==""){
-            tip.style.display="block";
-            tip.innerText="验证码不能为空";
-            tip.style.color="red";
-             return;
-        }
 
-            if(us !=""&& ps !="" && mail !="" && code !=""){
+            if(us !=""&& ps !=""){
                 $.ajax({
-                    url:"http://118.195.129.130:3000/user/reg",
+                    url:"http://localhost:8080/register",
                     type: "POST",
                     data:{
-                        us:us,
-                        ps:ps,
-                        mail:mail,
-                        code:code,
+                        name:us,
+                        password:ps,
+
                     },
                     success:function (res) {
-                        if(res.err==0){
+                        if(res.status==200){
                         console.log("注册成功");
                         tip.innerText="注册成功";
                         }
@@ -122,25 +107,23 @@ $(function(){
         }
             if(adName !="" && psw !=""){
                 $.ajax({
-                    url:"http://118.195.129.130:3000/user/login",
+                    url:"http://localhost:8080/login",
                     type:"POST",
                     data:{
-                        us:adName,
-                        ps:psw,
+                        name:adName,
+                        password:psw,
                        
                     },
                     success:function (res) {
                         if(res.err==-1){
                             tip2.innerText="账号或密码错误";
                         }
-                        if(res.err==0){
+                        if(res.status==200){
                             console.log("登陆成功");
                         tip2.innerText="登录成功";
                         tip2.style.color="green";
-                        sessionStorage.setItem("token",res.data[0]._id);
-                        console.log(res.data[0]._id);
                          setInterval(() => {
-                             window.location.href="menu.html";
+                             window.location.href="../main.html";
                         }, 1000);
                         
                         }

@@ -396,16 +396,27 @@ function merge()
     // }
 	// var arry2=arry1.split(",");
 	// console.log(arry2);
-		if(i==editText.length-1){
-			var arry1 =arry1+c.join('|');
-		}else{
-			var arry1 =arry1+c.join('|')+",";
+	// 	if(i==editText.length-1){
+	// 		var arry1 =arry1+c.join('|');
+	// 	}else{
+	// 		var arry1 =arry1+c.join('|')+",";
+	//
+	// 	}
+	// 	console.log(arry1);
+	// }
+	// var arry2=arry1.split(",");
+	// console.log(arry2);
+			if(i==editText.length-1){
+				var arry1 =arry1+c.join(',');
+			}else{
+				var arry1 =arry1+c.join(',')+"ncvj%";
 
+			}
+
+			console.log(arry1);
 		}
-		console.log(arry1);
-	}
-	var arry2=arry1.split(",");
-	console.log(arry2);
+		var arry2=arry1.split("ncvj%");
+		console.log(arry2);
 	const JsonArray=JSON.stringify(arry2);
 	console.log(JsonArray);
 
@@ -418,13 +429,13 @@ function merge()
 			symbol:"..",
 		},
 		success:function (res) {
-			if(status==200){
+			if(res.status==200){
 				console.log("成功了");
 				console.log(res.data);
 			}
 			else{
-				console.log(status);
-				console.log(arry2);
+				console.log(res.status);
+				console.log(JsonArray);
 				console.log("失败了");
 			}
 		},
