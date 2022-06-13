@@ -423,11 +423,17 @@ function merge()
 
 	$.ajax({
 		url:"/combine",
-		type:"GET",
-		data:{
-			arrayLists1:JsonArray,
-			symbol:"..",
-		},
+		dataType:'json',
+		contentType:'application/json;charset=utf-8',
+		type:"POST",
+		data:JSON.stringify({
+			"arraylist": [
+				"string,213,123",
+				"213,123,1,321"
+			],
+			"symbol": "string",
+			"symbol2": "string"
+		}),
 		success:function (res) {
 			if(res.status==200){
 				console.log(JsonArray);
