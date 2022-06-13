@@ -60,7 +60,7 @@ var havecod=document.getElementById("havecod");
             if(us !=""&& ps !=""){
                 $.ajax({
                     url:"http://localhost:8080/register",
-                    type: "POST",
+                    type: "PUT",
                     data:{
                         name:us,
                         password:ps,
