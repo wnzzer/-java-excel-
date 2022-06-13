@@ -3,7 +3,7 @@ var _previousTotal;
 var _statusLayer=1;
 var _customEnabled=0;
 var _optionsVis=0;
-var _seperator=" ";
+var _seperator="";
 var _prefix="";
 var _suffix="";
 var _wordPrefix="";
@@ -78,19 +78,19 @@ $(document).ready(function(){
 	// 	}
 	// });
 
-	$(".editText").keyup(function(event){
-		countPossibilities();
-	});
+	// $(".editText").keyup(function(event){
+	// 	countPossibilities();
+	// });
 	
-	$("#mergeLink").click(function(event){
-		var target_offset = $("#resultsTextArea").offset();
-		var target_top = target_offset.top;
-		var scrPos = $(window).height() + $(window).scrollTop();
-		if (scrPos < target_top) {
-			scrollTo("resultAnch");
-		}
-		merge();
-	});
+	// $("#mergeLink").click(function(event){
+	// 	var target_offset = $("#resultsTextArea").offset();
+	// 	var target_top = target_offset.top;
+	// 	var scrPos = $(window).height() + $(window).scrollTop();
+	// 	if (scrPos < target_top) {
+	// 		scrollTo("resultAnch");
+	// 	}
+	// 	merge();
+	// });
 	
 	$(".scroll").click(function(event){
 		//prevent the default action for the click event
@@ -210,47 +210,47 @@ $(document).ready(function(){
 	
 	$("#sepNothing").click(function(event){
 		_seperator="";
-		_wordPrefix="";
+		// _wordPrefix="";
 	});	
 	$("#sepSpace").click(function(event){
 		_seperator=" ";
-		_wordPrefix="";
+		// _wordPrefix="";
 	});	
 	$("#sepDash").click(function(event){
 		_seperator="-";
-		_wordPrefix="";
+		// _wordPrefix="";
 	});	
 	$("#sepPlus").click(function(event){
-		_seperator=" ";
-		_wordPrefix="+";
+		_seperator="+";
+		// _wordPrefix="+";
 	});	
 	$("#sepCustom").click(function(event){
 		_seperator=$("#txtCustom").val();
-		_wordPrefix="";
+		// _wordPrefix="";
 	});	
 	$("#txtCustom").keyup(function(event){
 		_seperator=$("#txtCustom").val();
-		_wordPrefix="";
+		// _wordPrefix="";
 	});	
 	
 
 	$("#encNothing").click(function(event){
 		_prefix="";
-		_suffix="";
+		// _suffix="";
 	});	
 	$("#encQuotes").click(function(event){
-		_prefix="\"";
-		_suffix="\"";
+		_prefix='""';
+		// _suffix="\"";
 	});	
 	$("#encBrackets").click(function(event){
-		_prefix="[";
-		_suffix="]";
+		_prefix="[]";
+		// _suffix="]";
 	});	
-	$("#encPlus").click(function(event){
-		_prefix="";
-		_suffix="";
-		_wordPrefix="+";
-	});	
+	// $("#encPlus").click(function(event){
+	// 	_prefix="";
+	// 	_suffix="";
+	// 	_wordPrefix="+";
+	// });
 
 	$("#loadSampleDomaining").click(function(event){
 		var smpC1 = "iphone\nipad\nipod\nimac\nmacbook";								 
@@ -338,83 +338,171 @@ function scrollTo(target) {
 }
 
 
-function countPossibilities() {
-	var t1,t2,t3;
-	var c1,c2,c3;
-	var tot;
-
-	t1 = $("#colText1").val();
-	t2 = $("#colText2").val();
-	t3 = $("#colText3").val();
-	
-	c1 = t1.split("\n").length;
-	c2 = t2.split("\n").length;
-	c3 = t3.split("\n").length;
-	
-	tot = (c1 * c2 * c3);
-	tot = FormatNumber(tot); 
-	_realTot = tot;
-	
-	
-	if (_previousTotal != _realTot) {
-		_previousTotal = _realTot
-		if (_statusLayer ==1) {
-			$("#combinationsText2").html( tot + ((tot == 1)?" 个关键词":" 个关键词") + " 组合");
-			$("#combinationsText2").stop(true,true).fadeIn("fast", function() {});
-			$("#combinationsText1").stop(true,true).fadeOut("fast", function() {});
-			_statusLayer =2;
-		} else {
-			$("#combinationsText1").html( tot + ((tot == 1)?" 个关键词":" 个关键词") + " 组合");
-			$("#combinationsText1").stop(true,true).fadeIn("fast", function() {});
-			$("#combinationsText2").stop(true,true).fadeOut("fast", function() {});
-			_statusLayer =1;
-		}
-	}
-}
+// function countPossibilities() {
+// 	var t1,t2,t3;
+// 	var c1,c2,c3;
+// 	var tot;
+//
+// 	t1 = $("#colText1").val();
+// 	t2 = $("#colText2").val();
+// 	t3 = $("#colText3").val();
+//
+// 	c1 = t1.split("\n").length;
+// 	c2 = t2.split("\n").length;
+// 	c3 = t3.split("\n").length;
+//
+// 	tot = (c1 * c2 * c3);
+// 	tot = FormatNumber(tot);
+// 	_realTot = tot;
+//
+//
+// 	if (_previousTotal != _realTot) {
+// 		_previousTotal = _realTot
+// 		if (_statusLayer ==1) {
+// 			$("#combinationsText2").html( tot + ((tot == 1)?" 个关键词":" 个关键词") + " 组合");
+// 			$("#combinationsText2").stop(true,true).fadeIn("fast", function() {});
+// 			$("#combinationsText1").stop(true,true).fadeOut("fast", function() {});
+// 			_statusLayer =2;
+// 		} else {
+// 			$("#combinationsText1").html( tot + ((tot == 1)?" 个关键词":" 个关键词") + " 组合");
+// 			$("#combinationsText1").stop(true,true).fadeIn("fast", function() {});
+// 			$("#combinationsText2").stop(true,true).fadeOut("fast", function() {});
+// 			_statusLayer =1;
+// 		}
+// 	}
+// }
 
 //给接口的值。
-function merge()
-{
-	var arry1='';
-    var editText=document.getElementsByClassName("editText");
-    console.log(editText[1]);
-    for(var i=0;i<editText.length;i++){
-        var t=editText[i].value
-        // console.log(editText[i].value);
-        if(editText[i].value==_defaultTxt){
-            editText[i].value="";
-        }
-        var c=t.split("\n");
-	// 	if(i==editText.length-1){
-	// 		var arry1 =arry1+c.join('|');
-	// 	}else{
-	// 		var arry1 =arry1+c.join('|')+",";
-	//
-	// 	}
-	//
-	// 	console.log(arry1);
-    // }
-	// var arry2=arry1.split(",");
-	// console.log(arry2);
-	// 	if(i==editText.length-1){
-	// 		var arry1 =arry1+c.join('|');
-	// 	}else{
-	// 		var arry1 =arry1+c.join('|')+",";
-	//
-	// 	}
-	// 	console.log(arry1);
-	// }
-	// var arry2=arry1.split(",");
-	// console.log(arry2);
-			if(i==editText.length-1){
-				var arry1 =arry1+c.join(',');
-			}else{
-				var arry1 =arry1+c.join(',')+"ncvj%";
+function merge() {
+	var arry1 = '';
+	var cn = 1;
+	var editText = document.getElementsByClassName("editText");
+	console.log(editText[1]);
+	var empty_box_nume = 0;
+	for (var i = 0; i < editText.length; i++) {
+		if (editText[i].value == _defaultTxt) {
+			empty_box_nume++;
+		}
+	}
+	console.log(empty_box_nume);
+	for (var i = 0; i < editText.length-1; i++) {
+		if (editText[i].value == _defaultTxt) {
+			editText[i].value = "";
+			editText[i].innerHTML = "";
+			console.log("为空了");
+			// console.log(editText[i].value);
+			console.log(editText[i].value);
+
+		}
+	}
+	console.log(editText.length - 1);
+	console.log(editText[editText.length - 1].value)
+	if (editText[editText.length - 1].value == ""){
+		console.log("最后一个框为空");
+		for (var i = 0; i < editText.length-1; i++) {
+			// var t=editText[i].value
+			// console.log(editText[i].value);
+			if (editText[i].value == _defaultTxt) {
+				editText[i].value = "";
+				editText[i].innerHTML = "";
+				console.log("为空了");
+				console.log(editText[i].value);
 
 			}
+			var t = editText[i].value
+			console.log(t);
+			if (t != "") {
+				var c = t.split("\n");
+				console.log(c);
 
-			console.log(arry1);
+				// console.log(c);
+				cn = cn * c.length;
+				cn = FormatNumber(cn);
+				// 	if(i==editText.length-1){
+				// 		var arry1 =arry1+c.join('|');
+				// 	}else{
+				// 		var arry1 =arry1+c.join('|')+",";
+				//
+				// 	}
+				//
+				// 	console.log(arry1);
+				// }
+				// var arry2=arry1.split(",");
+				// console.log(arry2);
+				// 	if(i==editText.length-1){
+				// 		var arry1 =arry1+c.join('|');
+				// 	}else{
+				// 		var arry1 =arry1+c.join('|')+",";
+				//
+				// 	}
+				// 	console.log(arry1);
+				// }
+				// var arry2=arry1.split(",");
+				// console.log(arry2);
+				if (i == editText.length-2) {
+					console.log(i);
+					var arry1 = arry1 + c.join(',');
+				} else {
+					console.log(i);
+					var arry1 = arry1 + c.join(',') + "ncvj%";
+
+				}
+			}
 		}
+
+	} else{
+		for (var i = 0; i < (editText).length; i++) {
+			// var t=editText[i].value
+			// console.log(editText[i].value);
+			if (editText[i].value == _defaultTxt) {
+				editText[i].value = "";
+				editText[i].innerHTML = "";
+				console.log("为空了");
+				console.log(editText[i].value);
+
+			}
+			var t = editText[i].value
+			console.log(t);
+			if (t != "") {
+				var c = t.split("\n");
+				console.log(c);
+
+				// console.log(c);
+				cn = cn * c.length;
+				cn = FormatNumber(cn);
+				// 	if(i==editText.length-1){
+				// 		var arry1 =arry1+c.join('|');
+				// 	}else{
+				// 		var arry1 =arry1+c.join('|')+",";
+				//
+				// 	}
+				//
+				// 	console.log(arry1);
+				// }
+				// var arry2=arry1.split(",");
+				// console.log(arry2);
+				// 	if(i==editText.length-1){
+				// 		var arry1 =arry1+c.join('|');
+				// 	}else{
+				// 		var arry1 =arry1+c.join('|')+",";
+				//
+				// 	}
+				// 	console.log(arry1);
+				// }
+				// var arry2=arry1.split(",");
+				// console.log(arry2);
+				if (i == (editText).length - 1) {
+					console.log(i);
+					var arry1 = arry1 + c.join(',');
+				} else {
+					console.log(i);
+					var arry1 = arry1 + c.join(',') + "ncvj%";
+
+				}
+			}
+		}
+}
+	console.log(arry1);
 		var arry2=arry1.split("ncvj%");
 		console.log(arry2);
 	const JsonArray=JSON.stringify(arry2);
@@ -426,16 +514,29 @@ function merge()
 		dataType:'json',
 		contentType:'application/json;charset=utf-8',
 		type:"POST",
-		data:JSON.stringify({
-			"arraylist": arry2,
-			"symbol": ",",
-			"symbol2": ""
+		data:
+		// 	{
+		// 	arraylist:JsonArray,
+		// 	symbol:JSON.stringify( "string"),
+		// 	symbol: JSON.stringify( "string"),
+		//
+		// },
+
+			JSON.stringify({
+			"arraylist":arry2,
+			"symbol": _seperator,
+			"symbol2": _prefix
 		}),
 		success:function (res) {
 			if(res.status==200){
 				console.log(JsonArray);
 				console.log("成功了");
 				console.log(res.data);
+				console.log(res.data.dataInner.join('\n') );
+				$("#resultText").val(res.data.dataInner.join('\n'));
+
+
+
 			}
 			else{
 				console.log(res.status);
@@ -458,88 +559,89 @@ function merge()
 
 	// var arry2=[arry1];
 	// console.log(arry2);
+	// tot = (c1.length * c2.length * c3.length);
+	// tot = FormatNumber(tot);
+    console.log("总数为"+cn);
+	// var t1,t2,t3;
+	// var c1,c2,c3;
+	// var tot;
+	//
+	// t1 = $("#colText1").val();
+	// t2 = $("#colText2").val();
+	// t3 = $("#colText3").val();
+	//
+	// // if (t1 == _defaultTxt){ t1 = "";}
+	// // if (t2 == _defaultTxt){ t2 = "";}
+	// // if (t3 == _defaultTxt){ t3 = "";}
+	//
+	// c1 = t1.split("\n");
+	// c2 = t2.split("\n");
+	// c3 = t3.split("\n");
+	//
+	// tot = (c1.length * c2.length * c3.length);
+	// tot = FormatNumber(tot);
+	//
+	// var seperator = _seperator; //" ";
+	// var prefix = _prefix;
+	// var suffix = _suffix;
+	// var wordPrefix = _wordPrefix;
+	//
+	//
+	// var buf = "";
+	// var ln = "";
+	// var cnt = 0;
+	//
+	// for (var i1=0; i1 < c1.length; i1++)
+	// {
+	// 	for (var i2=0; i2 < c2.length; i2++)
+	// 	{
+	// 		for (var i3=0; i3 < c3.length; i3++)
+	// 		{
+	// 			c1[i1] = jQuery.trim(c1[i1]);
+	// 			c2[i2] = jQuery.trim(c2[i2]);
+	// 			c3[i3] = jQuery.trim(c3[i3]);
+	//
+	// 			if 	(c3[i3] != "") {
+	// 				ln = prefix + c1[i1] + seperator + c2[i2] + seperator + c3[i3] + suffix;
+	// 				//buf += prefix + c1[i1] + seperator + c2[i2] + seperator + c3[i3] + suffix + "\n";
+	// 			}
+	// 			else
+	// 				if 	(c2[i2] != "") {
+	// 					ln = prefix + c1[i1] + seperator + c2[i2] + suffix;
+	// 					//buf += prefix + c1[i1] + seperator + c2[i2] + suffix + "\n";
+	// 				}
+	// 				else
+	// 				{
+	// 					ln = prefix + c1[i1] + suffix;
+	// 					//buf += prefix + c1[i1] + seperator + c2[i2] + suffix + "\n";
+	// 				}
+	// 			if (wordPrefix != "")
+	// 			{
+	// 				ln = " " + ln;
+	// 				//ln = ln.replace(" "," +");
+	//
+	// 				ln = ln.replace(/ /g," +");
+	// 			}
+	// 			console.log(".....................");
+	// 				console.log(ln);
+	// 			buf += jQuery.trim(ln) + "\n";
+	// 			// console.log(".....................");
+	// 			// console.log(buf);
+	// 			cnt++;
+	// 		}
+	// 		//stats.value = cnt;
+	// 	}
+	// }
 	
-    console.log("总数为"+editText.length);
-	var t1,t2,t3;
-	var c1,c2,c3;
-	var tot;
-
-	t1 = $("#colText1").val();
-	t2 = $("#colText2").val();
-	t3 = $("#colText3").val();
-	
-	// if (t1 == _defaultTxt){ t1 = "";}
-	// if (t2 == _defaultTxt){ t2 = "";}
-	// if (t3 == _defaultTxt){ t3 = "";}
-	
-	c1 = t1.split("\n");
-	c2 = t2.split("\n");
-	c3 = t3.split("\n");
-	
-	tot = (c1.length * c2.length * c3.length);
-	tot = FormatNumber(tot);
-	
-	var seperator = _seperator; //" ";
-	var prefix = _prefix;
-	var suffix = _suffix;
-	var wordPrefix = _wordPrefix;
-	
-	
-	var buf = "";
-	var ln = "";
-	var cnt = 0;
-	
-	for (var i1=0; i1 < c1.length; i1++)
-	{
-		for (var i2=0; i2 < c2.length; i2++)
-		{
-			for (var i3=0; i3 < c3.length; i3++)
-			{
-				c1[i1] = jQuery.trim(c1[i1]);
-				c2[i2] = jQuery.trim(c2[i2]);
-				c3[i3] = jQuery.trim(c3[i3]);
-				
-				if 	(c3[i3] != "") {
-					ln = prefix + c1[i1] + seperator + c2[i2] + seperator + c3[i3] + suffix;
-					//buf += prefix + c1[i1] + seperator + c2[i2] + seperator + c3[i3] + suffix + "\n";
-				} 
-				else
-					if 	(c2[i2] != "") {
-						ln = prefix + c1[i1] + seperator + c2[i2] + suffix;
-						//buf += prefix + c1[i1] + seperator + c2[i2] + suffix + "\n";
-					}
-					else	
-					{
-						ln = prefix + c1[i1] + suffix;
-						//buf += prefix + c1[i1] + seperator + c2[i2] + suffix + "\n";
-					}
-				if (wordPrefix != "")
-				{
-					ln = " " + ln;
-					//ln = ln.replace(" "," +");
-
-					ln = ln.replace(/ /g," +");
-				}
-				console.log(".....................");
-					console.log(ln);
-				buf += jQuery.trim(ln) + "\n";
-				// console.log(".....................");
-				// console.log(buf);
-				cnt++;
-			}
-			//stats.value = cnt;
-		}
-	}
-	
-	$("#resultText").val(buf);
+	// $("#resultText").val(buf);
 	
 	if (_statusLayer ==1) {
-		$("#combinationsText2").html( tot + ((tot == 1)?" 个关键词":" 个关键词") + " 合成!");
+		$("#combinationsText2").html( cn + ((cn == 1)?" 个关键词":" 个关键词") + " 合成!");
 		$("#combinationsText2").stop(true,true).fadeIn("fast", function() {});
 		$("#combinationsText1").stop(true,true).fadeOut("fast", function() {});
 		_statusLayer =2;
 	} else {
-		$("#combinationsText1").html( tot + ((tot == 1)?" 个关键词":" 个关键词") + " 合成!");
+		$("#combinationsText1").html( cn + ((cn == 1)?" 个关键词":" 个关键词") + " 合成!");
 		$("#combinationsText1").stop(true,true).fadeIn("fast", function() {});
 		$("#combinationsText2").stop(true,true).fadeOut("fast", function() {});
 		_statusLayer =1;
