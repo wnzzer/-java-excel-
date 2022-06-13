@@ -1,15 +1,13 @@
 package com.example.combinedkeywords.controller;
 
 import com.example.combinedkeywords.pojo.Data;
+import com.example.combinedkeywords.pojo.Pojo;
 import com.example.combinedkeywords.util.CombinationOperation;
 import com.example.combinedkeywords.util.ExcelUtil;
 import com.example.combinedkeywords.util.JsonResult;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
@@ -21,12 +19,13 @@ import java.util.*;
  */
 @RestController
 public class CombineController {
-
-
-    @GetMapping("/combine")
-    public JsonResult combine(@RequestParam Object[] arrayLists1, @RequestParam String symbol,@RequestParam(required = false) String symbol2) {
+    @RequestMapping ("/combine")
+    public JsonResult combine(@RequestBody Pojo pojo) {
+        String symbol=pojo.getSymbol();
+        String symbol2= pojo.getSymbol2();
         List<String> resultArraylist = new ArrayList<>();
         List a = new ArrayList<>();
+        String[]arrayLists1=pojo.getArraylist();
         System.out.println(arrayLists1);
         System.out.println(arrayLists1[0]);
         for (Object temp : arrayLists1) {
