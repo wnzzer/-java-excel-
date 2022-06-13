@@ -21,10 +21,11 @@ import java.util.*;
  */
 @RestController
 public class CombineController {
-    List<String> resultArraylist = new ArrayList<>();
+
 
     @GetMapping("/combine")
-    public JsonResult combine(@RequestParam Object[] arrayLists1, String symbol) {
+    public JsonResult combine(@RequestParam Object[] arrayLists1, @RequestParam String symbol,@RequestParam(required = false) String symbol2) {
+        List<String> resultArraylist = new ArrayList<>();
         List a = new ArrayList<>();
         System.out.println(arrayLists1);
         System.out.println(arrayLists1[0]);
@@ -38,6 +39,10 @@ public class CombineController {
         String sTemp = null;
         for (List<String> tempListA : tempArraylist) {
             sTemp = StringUtils.join(tempListA, symbol);
+            if (symbol2!=null){
+                sTemp=symbol2+sTemp+symbol2;
+                System.out.println(sTemp);
+            }
             resultArraylist.add(sTemp);
         }
         Date date = new Date();
