@@ -430,6 +430,7 @@ function merge()
 		},
 		success:function (res) {
 			if(res.status==200){
+				console.log(JsonArray);
 				console.log("成功了");
 				console.log(res.data);
 			}

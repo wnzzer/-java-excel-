@@ -71,7 +71,7 @@ var havecod=document.getElementById("havecod");
                         console.log("注册成功");
                         tip.innerText="注册成功";
                         }
-                        if(res.err==-1){
+                        if(res.status==500){
                             console.log("注册失败");
                             tip.innerText=res.msg;
                         }
@@ -115,7 +115,7 @@ $(function(){
                        
                     },
                     success:function (res) {
-                        if(res.err==-1){
+                        if(res.status==500){
                             tip2.innerText="账号或密码错误";
                         }
                         if(res.status==200){
