@@ -19,7 +19,7 @@ import java.util.*;
  */
 @RestController
 public class CombineController {
-    @RequestMapping ("/combine")
+    @PostMapping ("/combine")
     public JsonResult combine(@RequestBody Pojo pojo) {
         String symbol=pojo.getSymbol();
         String symbol2= pojo.getSymbol2();
@@ -54,7 +54,7 @@ public class CombineController {
         return JsonResult.ok(new Data(resultArraylist, fileName));
     }
 
-    @RequestMapping("/downloadFile")
+    @GetMapping("/downloadFile")
 
     private String downloadFile(HttpServletResponse response,String fileName){
         String downloadFilePath = "/root/fileSavePath/";
